@@ -19,6 +19,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+        http.csrf().disable()
+                .authorizeRequests()
+                //所有请求必须登录后才可访问
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .failureUrl("/login?error")
+                //登录失败界面可直接访问
+                .permitAll()
+                .and()
+                .logout()
+                //注销请求可直接访问
+                .permitAll();
     }
 }
