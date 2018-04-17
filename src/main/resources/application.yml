@@ -1,0 +1,46 @@
+spring:
+ datasource:
+  url: jdbc:mysql:///test?characterEncoding=utf8
+  driverClassName: com.mysql.jdbc.Driver
+  username: root
+  password: 123456
+  filters: stat,wall,log4j
+  maxActive: 20
+  initialSize: 1
+  maxWait: 60000
+  poolPreparedStatements: true
+  maxPoolPreparedStatementPerConnectionSize: 20
+  connectionProerties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  minIdle: 1
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  validationQuery: SELECT 1 from dual
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  filter: stat,log4j,wall
+ jpa:
+   show-sql: true
+   properties:
+    hibernate:
+      format_sql: true
+ mvc:
+  view:
+    prefix: /WEB-INF/jsp
+    suffix: .jsp
+ http:
+   encoding:
+     charset: utf-8
+     force: true
+     enabled: true
+logging:
+    level:
+        root : INFO
+        com.alibaba.druid: DEBUG
+        com.dy.springboot.server.mapper: DEBUG
+        com.example.demo: DEBUG
+    config: classpath:logback.xml
+server:
+  tomcat:
+    uri-encoding: UTF-8
+

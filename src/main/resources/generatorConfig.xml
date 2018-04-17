@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动包位置 ：注意写你自己的包路径-->
+    <!--导入属性配置 -->
+    <properties resource="generator.properties"></properties>
+    <!-- <classPathEntry location="D:\software\lib\mysql-connector-java-5.1.21.jar" /> -->
+    <classPathEntry location="C:\\Users\\Administrator\\.m2\\repository\\mysql\\mysql-connector-java\\5.1.35\\mysql-connector-java-5.1.35.jar" />
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!-- 数据库链接URL、用户名、密码  jdbc\:mysql\://localhost\:3306/cinema-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql:///test?characterEncoding=utf8" userId="root" password="123456">
+            <!-- <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="msa" password="msa"> -->
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.example.demo.entity" targetProject="C:\\Users\\Administrator\\Desktop\\开发插件\\lesson3\\src\\main\\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 生成的映射文件包名和位置 -->
+        <!--<sqlMapGenerator targetPackage="mapper" targetProject="${targetPackage}">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>-->
+        <!-- 生成DAO的包名和位置 -->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.rindy.cinema.mapper" targetProject="${targetPackage}">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>-->
+        <!-- 要生成那些表(更改tableName和domainObjectName就可以)这里是生成两张表的映射文件，多表可自行增加，确保你的数据库中已经建好表，并且表名没有写错~ -->
+        <table tableName="t_role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+    </context>
+</generatorConfiguration>
