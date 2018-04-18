@@ -22,4 +22,6 @@ public interface UserJPA extends JpaRepository<User, Long>,
 	Integer modifyById(Long id);
 
 	User findByName(String name);
+
+	User findByNameAndPwd(String name,String pwd);
 }

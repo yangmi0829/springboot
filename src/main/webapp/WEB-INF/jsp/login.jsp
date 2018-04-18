@@ -11,9 +11,10 @@
     <title>登陆界面</title>
 </head>
 <body>
-<form action="/user/login">
-    账号:<input type="text" name="name"><br/>
-    密码:<input type="text" name="pwd"><br/>
+<form action="/login" method="post">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    账号:<input type="text" name="username" value="ym"><br/>
+    <%--密码:<input type="text" name="pwd" value="123"><br/>--%>
     <input type="submit" value="登陆">
 </form>
 </body>

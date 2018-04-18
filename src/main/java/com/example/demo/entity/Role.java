@@ -1,13 +1,12 @@
 package com.example.demo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="t_role")
 public class Role {
     @Id
     @GeneratedValue
-    @Column(name="id")
     private Long id;
     @Column
     private String name;

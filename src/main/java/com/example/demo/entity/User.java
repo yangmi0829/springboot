@@ -28,7 +28,11 @@ public class User extends BaseEntity implements UserDetails{
     @Column(name="t_pwd")
     private String pwd;
     @ManyToMany
-    @JoinTable(name = "t_user_role",joinColumns = {@JoinColumn(name = "user_id")},inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    @JoinTable(
+            name = "t_user_role",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")}
+            )
     private List<Role> roleList;
 
     public List<Role> getRoleList() {
@@ -108,21 +112,21 @@ public class User extends BaseEntity implements UserDetails{
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
