@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 public class CookieUtils {
     private static final int COOKIE_MAX_AGE = 7 * 24 * 3600;
 
-
     public static void removeCookie(HttpServletRequest request, HttpServletResponse response, String name) {
         if (null == name) {
             return;
