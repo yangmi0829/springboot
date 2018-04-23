@@ -2,6 +2,7 @@ package com.example.demo.poi;
 
 import com.example.demo.entity.Student;
 import org.apache.poi.hssf.usermodel.*;
+import org.springframework.util.FileCopyUtils;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -129,6 +130,7 @@ public class ExportBeanExcel<T> {
         使用例子
     */
     public static void main(String [] args){
+        //^[1-9]\d{5}   (18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)  \d{3}  [0-9Xx]$
         List<String> listName = new ArrayList<>();
         listName.add("id");
         listName.add("名字");
