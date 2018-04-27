@@ -95,6 +95,7 @@ public class ExportBeanExcel<T> {
                                 textVal = String.valueOf(val);//转化成String
                             }else{
                                 textVal = null;
+
                             }
                             row.createCell((short) zdCell).setCellValue(textVal);//写进excel对象
                             zdCell++;
